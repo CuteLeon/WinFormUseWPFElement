@@ -1,6 +1,6 @@
 ﻿namespace WinFormUseWPFElement
 {
-    partial class Form1
+    partial class HostForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.MyElementHost = new System.Windows.Forms.Integration.ElementHost();
+            this.SuspendLayout();
+            // 
+            // MyElementHost
+            // 
+            this.MyElementHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MyElementHost.Location = new System.Drawing.Point(0, 0);
+            this.MyElementHost.Name = "MyElementHost";
+            this.MyElementHost.Size = new System.Drawing.Size(800, 450);
+            this.MyElementHost.TabIndex = 0;
+            this.MyElementHost.Text = "elementHost1";
+            this.MyElementHost.Child = null;
+            // 
+            // HostForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.MyElementHost);
+            this.Name = "HostForm";
+            this.Text = "Host Form";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Integration.ElementHost MyElementHost;
     }
 }
 
